@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sales and redemptions</title>
+</head>
+<body>
+	<div id="vendors">
+      <img src="images/u164.png">
+      <span>{{ 'saleAndRedemptions' | translate }}</span>
+ 	</div>
+ 	<div class="tab" ng-class="{true:'tab',false:'tab color-ccc'}[className]" ng-click="changeClass('0')">{{ 'sales' | translate }}</div>
+ 	<div class="tab tab-mar color-ccc" ng-class="{true:'tab tab-mar color-333',false:'tab tab-mar color-ccc'}[className1]"  ng-click="changeClass('1')">{{ 'redemptions' | translate }}</div>
+ 	<section class="voucher-section">
+ 		<input type="date" class="date-voucher">
+ 		<select class="select-voucher" ng-model="batchId" ng-change="queryVoucher(batchId)">
+ 		  <option value="">All deals</option>
+ 		  <option ng-repeat="deal in dealList" value="{{deal.batchId}}">{{deal.batchName}}</option>
+ 		</select>
+ 		<div class="sales {{ctrollShow}}">
+ 			<ul class="sales-title">
+ 				<li class="width-15">{{ 'voucherId' | translate }}</li>
+ 				<li class="width-20">{{ 'saleDate' | translate }}</li>
+ 				<li class="width-20">{{ 'redemptionDate' | translate }}</li>
+ 				<li class="width-10">{{ 'user' | translate }}</li>
+ 				<li class="width-35">{{ 'deal' | translate }}</li>
+ 			</ul>
+ 			<div infinite-scroll='nextPage()' infinite-scroll-disabled='busy' infinite-scroll-distance='1'>
+ 			<ul class="sales-content" ng-repeat="voucher in voucherList">
+ 				<li>
+ 					<ul>
+ 						<li class="width-15">{{voucher.voucherId}}</li>
+ 						<li class="width-20">{{voucher.saleDate|date:'yyyy/MM/dd HH:mm'}}</li>
+ 						<li class="width-20">{{voucher.redemptionDate|date:'yyyy/MM/dd HH:mm'}}</li>
+ 						<li class="width-10">{{voucher.userName}}</li>
+ 						<li class="width-35">{{voucher.name}}</li>
+ 					</ul>
+ 				</li>
+ 			</ul>
+ 			</div>
+ 		</div>
+ 		<div class="Redemptions {{ctrollHide}}">
+ 			<ul class="sales-title">
+ 				<li class="width-15">{{ 'voucherId' | translate }}</li>
+ 				<li class="width-20">{{ 'redemptionDate' | translate }}</li>
+ 				<li class="width-15">{{ 'user' | translate }}</li>
+ 				<li class="width-40">{{ 'deal' | translate }}</li>
+ 			</ul>
+ 			
+ 			<ul class="sales-content" ng-repeat="redemption in voucherList">
+ 				<li>
+ 					<ul>
+ 						<li class="width-15">{{redemption.voucherId}}</li>
+ 						<li class="width-20">{{redemption.redemptionDate|date:'yyyy/MM/dd HH:mm'}}</li>
+ 						<li class="width-15">{{redemption.userName}}</li>
+ 						<li class="width-40">{{redemption.name}}</li>
+ 					</ul>
+ 				</li>
+ 			</ul>
+ 		</div>
+ 	</section>
+</body>
+</html>

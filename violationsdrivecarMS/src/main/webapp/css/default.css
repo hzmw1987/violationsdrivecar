@@ -1,0 +1,2056 @@
+body {
+   font-family : Arial, Helvetica, Sans-Serif;
+   overflow:hidden;
+   min-height:700px;
+   overflow: auto;
+}
+a {
+  cursor: pointer;
+}
+
+.form-horizontal .form-group {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+#channelName1{
+	position: relative;
+	top:39px;
+	height: 35px;
+	left:21px;
+	z-index:100;
+	border:none;
+	background: rgba(242, 242, 242, 1);
+}
+
+.purchasePrice{
+	font-size: 18px;
+}
+
+.originalPrice{
+    color: #ccc;
+    text-decoration: line-through;
+    font-weight: normal;
+}
+
+#chanName{
+	position: relative;
+	top:25px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin: 0px 9px 0px 0px;
+    vertical-align: bottom;
+}
+
+#names{
+    border-width: 1px 0px 1px 1px;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-bottom-color: rgb(170, 170, 170);
+    border-left-color: rgb(170, 170, 170);
+    width: 150px;
+    background: rgb(242, 242, 242);
+    position: absolute;
+    top: 30px;
+    height: 30px;
+    z-index: 100;
+}
+.batch_img{
+    width: 250px;
+    height: 105px;
+}
+
+input {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#maximizePanelContainer {
+  font-size: 4px;
+  position:absolute;
+  left: 0px;
+  top: 0px;
+  width: 55px;
+  height: 20px;
+  overflow: visible;
+  z-index: 1000;
+}
+
+#purchase{
+	position: absolute;
+	width: 330px;
+	height:200px;
+	top:100px;
+	left:20px;
+	background: white;
+}
+
+#purchase_title{
+	position: absolute;
+	width: 330px;
+	height:40px;
+	top:60px;
+	left:20px;
+	background: white;
+	font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+#redeemed_title{
+	position: absolute;
+	width: 330px;
+	height:40px;
+	top:60px;
+	left:380px;
+	background: white;
+	font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+
+#redeemed{
+	position: absolute;
+	width: 330px;
+	height:200px;
+	top:100px;
+	left:380px;
+	background: white;
+}
+
+#sold{
+	position: absolute;
+	width: 1044px;
+	height:560px;
+	top:320px;
+	left:20px;
+	background: white;
+}
+
+#revenue{
+	position: absolute;
+	width: 330px;
+	height:240px;
+	top:60px;
+	left:740px;
+	background: white;
+}
+
+#addVendors #input_style{
+	opacity: 0;
+	width: 240px;
+}
+#maximizePanelOver {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 55px;
+    height: 20px;
+}
+
+.channel{
+	padding:10px 0;
+	margin-top:105px;
+	margin-left:20px;
+	background:#fff;
+	width:1044px;
+    overflow: hidden;
+    min-height: 220px;
+    border-bottom:solid 1px #c1c1c1;
+}
+.channel1{
+	padding:10px 0;
+	margin-top:105px;
+	margin-left:20px;
+	background:#fff;
+	width:1044px;
+    overflow: hidden;
+    height: 80px;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 30px;
+    padding-top: 35px;
+}
+.channel1 button{
+    border: 1px solid #999;
+    background: #fff;
+    border-radius: 5px;
+    color: #999;
+    font-size: 12px;
+    width: 138px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    left:900px;
+    top:135px;
+}
+.channel img{
+	height:100px;
+	width:160px;
+}
+.channel img,.channel ul{float: left;}
+.channel .local-add{width: 300px;padding-left: 15px;}
+.channel ul li:nth-child(1){font-weight: bold;}
+
+.channel button{
+    border: 1px solid #999;
+    background: #fff;
+    border-radius: 5px;
+    color: #999;
+    font-size: 12px;
+    width: 138px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 170px;
+}
+#spans{
+	position: absolute;
+	left:1000px;
+}
+.maximizePanel {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 55px;
+    height: 20px;
+    background: #a2a2a2 url('../images/expand.png') no-repeat center center;
+    background: url('../images/expand.svg') no-repeat center center, linear-gradient(rgba(200,200,200,.5),rgba(200,200,200,.5));
+    cursor: pointer;
+}
+
+
+
+.hashover #interfaceControlFrameMinimizeContainer a:hover {
+    background: url('../images/close_hover.png') no-repeat center center;
+    background: url('../images/close_hover.svg') no-repeat center center, linear-gradient(transparent,transparent);
+}
+
+.index-logo{
+	width: 84px;
+    height: 70px;
+    background-color: rgba(239, 119, 86, 1);
+    position: absolute;
+    left: 15px;
+    top: 0px;
+    z-index: 100;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#images{
+    width: 53px;
+    height: 32px;  
+}
+
+.logos{
+	width: 24px;
+	height:24px;
+}
+
+#vendors{
+	position: absolute;
+	top:50px;
+	width:100px;
+	height:60px;
+    cursor: pointer;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 28px;
+}
+
+#vendors img{
+	position:absolute;
+	left:30px;
+	width:30px;
+	height:30px;
+}
+#vendors span{
+	position:absolute;
+	left:130px;
+	top:-8px;
+	width:500px;
+}
+
+#to_adds{
+	position: absolute;
+	top: 260px;
+	left: 20px;
+}
+
+#to_add{
+	position: absolute;
+    top: 262px;
+    left: 137px
+}
+
+
+
+#to_addUser{
+	position:relative;
+	height:55px;
+	line-height:55px;
+	overflow:hidden;
+	margin-top:10px;
+	padding-left:20px;
+}
+
+#showVendor{
+	margin-left: 20px;
+    width: 1001px;
+    height: 40px;
+    text-align: left;
+    background: rgba(242, 242, 242, 1);
+}
+
+.back{
+	float:left;
+}
+
+
+#addVendors{
+	position: absolute;
+    left: 20px;
+    top: 100px;
+    width: 1080px;
+    background:#fff;
+    font-size: 14px;
+    text-align: left;
+    padding-right:20px;
+}
+
+#addUser{
+    margin:100px 0 0 20px;
+    width: 1080px;
+    background: url('../images/u874.png') 0 0 no-repeat;
+    background-size:100% 100%;
+    padding-bottom:40px;
+}
+
+#addUser span{
+	font-family: 'Proxima Nova Semibold', 'Proxima Nova Regular', 'Proxima Nova';
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+	display:inline-block;
+	height: 30px;
+    line-height: 30px;
+    padding: 0px;
+    padding-right: 20px;
+    margin-top: 20px;
+}
+
+.input_user{
+	height: 30px;
+    line-height: 30px;
+    padding: 0px;
+    margin-left: 20px;
+    width: 1001px;
+    height: 40px;
+    background: rgba(242, 242, 242, 1);
+    
+}
+.radio_bg{
+	height:auto;
+	overflow:hidden;
+	padding-left:20px;
+}
+.radio_role{
+	font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+    background: rgba(242, 242, 242, 1);
+    width: 301px;
+    height: 162px;
+    float: left;
+    margin-right: 10px;
+}
+
+#addVendors button,.set-map{
+	width: 240px;
+    height: 55px;
+	background: #333;
+	color: white;
+    border: none;
+    display: inline-block;
+    text-align: center;
+    line-height: 55px;
+}
+
+#addVendors span{
+	font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+}
+#addVendors input{
+    width: 511px;
+    height: 40px;
+    font-weight: 409;
+    font-style: normal;
+    font-size: 13px;
+    text-decoration: none;
+    text-align: left;
+    margin-left: 20px;   
+}
+#addVendors input.pos-xy{
+    width: 70px;
+    background: none;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+}
+.location-pos{
+    position: relative;
+}   
+.location{
+	position:relative;
+    margin-top:20px;
+    margin-left:40px;
+    width: 1000px;
+    height: 423px;
+    background: rgba(242, 242, 242, 1);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(242, 242, 242, 1);
+    padding-top:10px;
+    border-radius:5px;
+}
+#addVendors .location span{
+	height: 30px;
+    line-height: 30px;
+    padding:0 5px;
+	}
+.location input{
+	background: white;
+}
+.location select{
+	 background: white;
+	 margin-left: 20px;
+	 width: 511px;
+     height: 40px;
+}
+.float-right{
+	float:right;
+	margin-right:200px;
+	margin-top:-52px;
+	margin-bottom: 5px;
+}
+.float-right1{
+	margin-right:-20px;
+}
+#addVendors span.span-right{
+    display: block;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+#addLocation{
+    margin-left: 40px;
+    width: 1000px;
+    height: 40px;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    color: #999999;
+    text-align: center;
+    border: 1px black solid;
+    line-height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgba(153, 153, 153, 1);
+    margin-top: 10px;
+    
+}
+
+#event{
+	/* position: absolute; */
+	top:720px;
+	left:140px;
+}
+.event{
+    padding: 20px 20px 32px 20px;
+    overflow: hidden;
+}
+.event span{
+    height: 55px;
+    line-height: 55px;
+}
+#addVendors button.add-ventor{
+    float: right;
+    width: 160px;
+    height: 55px;
+    background: rgb(241, 75, 5);
+    border: none;
+    outline: none;
+}
+.add-user{
+    float: right;
+    width: 160px;
+    height: 55px;
+    background: rgb(241, 75, 5);
+    border: none;
+    outline: none;
+    color: white;
+}
+#newVen{
+    position: absolute;
+    top:-7px;
+    left: 800px;
+    width: 240px;
+    height: 55px;
+    line-height:55px;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color:white;
+    background-color: rgb(255, 60, 0);
+    text-align: center;
+    line-height: 3.3em;
+}
+#saves{
+	position:absolute;
+	top:-2px;
+	left:920px;
+	float:right;
+	width: 161px;
+    height: 55px;
+    text-align:center;
+    color:white;
+	background: url('../images/u467.png');
+	line-height:55px;
+}
+.save_cate{
+	position: absolute;
+    top: 0px;
+    left: 813px;
+    float: right;
+    width: 161px;
+    height: 55px;
+    text-align: center;
+    color: white;
+    background: url('../images/u467.png');
+    line-height: 55px;
+}
+#save{
+	position:absolute;
+	top:840px;
+	left:944px;
+	float:right;
+	width: 161px;
+    height: 55px;
+    text-align:center;
+    color:white;
+	background: url('../images/u467.png');
+	line-height:55px;
+}
+
+#save_user{
+	position:absolute;
+	bottom:0;
+	left:944px;
+	float:right;
+	width: 161px;
+    height: 55px;
+    text-align:center;
+    color:white;
+	background: url('../images/u467.png');
+	line-height:55px;
+}
+
+#content{
+	position: absolute;
+	left:241px;
+    top:40px;
+}
+
+#search{
+	position:absolute;
+	left:22px;
+	top:111px;
+	color: rgb(153, 153, 153); 
+	width: 260px;
+	height:40px;
+}
+
+#query{
+	position:absolute;
+	left:240px;
+	height:40px;
+	width:35px;
+	top:110px;
+	background: images/u170.png;
+}
+
+#line{
+	position:absolute;
+	left:0px;
+	height:2px;
+	top:161px;
+}
+
+
+.vendoeList{
+	position:absolute;
+	left:20px;
+	top:180px;
+	width:1044px;
+	line-height: 30px;
+	background-color: #f0f0f0;
+}
+
+.cateList{
+	position:absolute;
+	left:20px;
+	top:130px;
+	width:1044px;
+	line-height: 30px;
+	background-color: #f0f0f0;
+}
+
+#search_role{
+	position: absolute;
+	top:120px;
+	left:610px;
+	width:500px;
+	font-size: 14px;
+	font-style: normal;
+    line-height: 20px;
+}
+
+#search_role select{
+	width: 340px;
+    height: 40px;
+    background: white;
+    margin-left: 10px;
+	
+}
+
+span{
+	margin-left: 20px;
+	padding-top: 5px;
+}
+
+li{
+	list-style: none;
+}
+
+#count{
+	position:absolute;
+	left:220px;
+	top:180px;
+	line-height: 30px;
+	width:400px;
+	background-color: white;
+}
+
+tr{
+	background-color: white;
+}
+
+
+#permiss{
+	margin-top:8px;
+	margin-left:30px;
+	font-family: 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    color: #333333;
+    line-height: normal;
+}
+
+#cate{
+	font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #000000;
+    text-align: left;
+    line-height: 46px;
+}
+
+#top{
+	position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 60px;
+    background-color: black;
+}
+
+#voucher{
+	position:absolute;
+	left:120px;
+	top:30%;
+	font-family: 'Proxima Nova Semibold', 'Proxima Nova Regular', 'Proxima Nova';
+    font-weight: 600;
+    font-style: normal;
+    font-size: 18px;
+    color: #FFFFFF;
+    
+}
+
+#project{
+	position: absolute;
+    left: 277px;
+    top: 34%;
+    width: 276px;
+    word-wrap: break-word;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: left;
+}
+
+#userName{
+	position: absolute;
+    left: 850px;
+    top: 22%;
+    width: 276px;
+    word-wrap: break-word;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: left;
+}
+
+
+#out{
+	position: absolute;
+	left: 1180px;
+    top: 10px;
+	height: 40px;
+	width: 155px;
+    background: inherit;
+    background-color: rgba(0, 0, 0, 1);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding-top:6px;
+    text-align: center;
+}
+#lan-en{
+	position: absolute;
+    left: 1000px;
+    top: 10px;
+	height: 40px;
+	width: 155px;
+    background: inherit;
+    background-color: rgba(0, 0, 0, 1);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding-left:30px;
+    text-align: center;
+}
+
+#rightPanel{
+    position: absolute;
+    left: 0px;
+    top: 60px;
+    width: 241px;
+    height: 80%;
+    background: inherit;
+    background-color: rgba(228, 228, 228, 1);
+    border: none;
+    border-radius: 0px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+
+.emptyStateContainer {
+    text-align: center;
+    padding: 0px 10px;
+    margin-top: 32px
+}
+
+.emptyStateTitle {
+    margin: 0px 0px 9px 0px;
+    font-weight: bold;
+}
+
+.emptyStateContent {
+    line-height: 16px;
+}
+
+.dottedDivider {
+    height: 2px;
+    margin: 15px 0px 15px 0px;
+    background: url('../images/divider.png') no-repeat center center;
+    background: url('../images/divider.svg') no-repeat center center, linear-gradient(transparent,transparent);
+}
+
+.nondottedDivider {
+    height: 2px;
+    margin: 9px 0px 9px 0px;
+}
+.show-deal{
+	padding:10px 0;
+	margin-bottom:4px;
+	background:#fff;
+	width:1044px;
+	margin-left: 20px;
+    clear: both;
+    overflow: hidden;
+}
+.show-deal img,.show-deal .list-deal{float: left;}
+.show-deal .list-deal{padding-left: 15px;}
+.show-deal .list-deal li{height: 25px;line-height: 25px;}
+.show-deal .list-deal li:nth-child(1){font-weight: bold;font-size: 16px;color: #333;}
+.show-deal .list-deal li:nth-child(3){
+    border: 1px solid rgba(0, 204, 0, 1);
+    padding: 0 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    color: rgba(0, 204, 0, 1);
+}
+.show-deal .list-right{float: right;}
+.show-deal .list-right ul{
+    float: left;
+    text-align: center;
+    padding: 20px 20px;
+    border-left: 1px solid rgba(204, 204, 204, 0.29);
+    margin-bottom: 0;
+    margin: 5px 0;
+}
+.show-deal .list-right ul li{
+   width: 66px;
+}
+#money{
+	margin-top: 88px;
+	text-align:center;
+	font-size: 18px;
+}
+.weight-700{
+    font-weight: 700;
+}
+.font-18{
+    font-size: 18px;
+}
+.show-deal img{width: 231px;height: 96px;}
+/*.show-deal .list-money*/
+.show-shop{padding:10px 0;margin-bottom:4px;background:#fff;}
+.show-shop span:nth-child(3){    
+	float: right;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid rgba(153, 153, 153, 1);
+    width: 90px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(153, 153, 153, 1);
+    padding-top: 0;
+    margin-right: 10px;
+    }
+#channelName{
+	float: right;
+    height: 30px;
+    width: 90px;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 0;
+    margin-right: 10px;
+}
+.show-shop span:nth-child(2){
+	font-weight:bold;
+}
+    
+.show-shop span {
+    width: 200px;
+    text-align: center;
+    display: inline-block;
+}
+.add-vendors{    
+	padding: 20px 20px;
+	}
+.add-vendors span{
+    display: block;
+    margin-bottom: 5px;
+}    
+.add-vendors input{
+    background: rgba(242, 242, 242, 1);
+}
+#addVendors .file-box{
+	position:relative;
+	width:480px;
+	height:55px;
+}
+#addVendors .btn{
+	margin-top:-9px;
+	background-color:#333;
+	height:55px;
+	width:240px;
+	color:#fff;
+	font-weight:400;
+	font-size:14px;
+	text-align:center;
+    border-radius: 0;
+}
+
+#addVendors .btn_set{
+	margin-left:0;
+	background-color:#333;
+	height:55px;
+	width:240px;
+	color:#fff;
+	font-weight:400;
+	font-size:14px;
+	text-align:center;
+    border-radius: 0;
+}
+
+#addVendors .txt{
+	border: none;
+    background-color: #ffffff;
+    position: absolute;
+    margin-left: 350px;
+    outline: none;
+    width: 120px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 40px;
+    top: 35px;
+}
+#addVendors .file{
+	position:absolute;
+	top:0;
+	left:86px;
+	height:55px;filter:alpha(opacity:0);
+	opacity:0;
+	width:240px;
+}
+#addVendors .top{
+    top: -10px;
+    left: 0;
+}
+
+#vendoeList1 p{
+    float: left;
+    margin:10px 0 10px 25px;
+    height: 45px;
+    line-height: 45px;
+}
+#vendoeList1 button{
+    float: right;
+    height: 45px;
+    width: 160px;
+    background: #F14B05;
+    border: none;
+    color: #fff;
+    margin: 10px 0;
+}
+
+/*deal.html*/
+.bg-gray{background:rgb(242, 242, 242)}
+.mar-30{margin-top: 30px;}
+.deal{
+	overflow: hidden;
+    background: #fff;
+    width: 1044px;
+    padding: 0 30px 30px;
+    margin-left: 20px;
+    margin-top: 110px;
+}
+.deal select,.deal-title input{
+    width: 90%;
+    height: 30px;
+}
+.deal-title{
+    clear: both;
+}
+.trix-width{
+    width: 90%;
+}
+.button-groups{
+    width: 90%;
+    border: 1px solid #bbb;
+    padding-left: 5px;
+}
+trix-toolbar{
+    width: 90%;
+    border: 1px solid #F2F2F2;
+    padding-left: 5px;
+    background: rgb(242, 242, 242);
+}
+trix-toolbar .button_group {
+    display: inline-block;
+    font-size: 0;
+    margin: 4px 8px 0px 0 !important;
+    overflow: hidden;
+    padding-top: 0;
+}
+trix-editor {
+    color: #111;
+    border: 1px solid #bbb;
+     border-radius: 0; 
+    margin: 0;
+    padding: 4px 8px;
+    min-height: 54px;
+    outline: none;
+}
+.file-box img{
+    width: 100px;
+    height: 60px;
+}
+
+.a-upload {
+    height: 55px;
+    line-height: 55px;
+    position: relative;
+    cursor: pointer;
+    color: #fff;
+    background: #333;
+    overflow: hidden;
+    display: inline-block;
+    width: 240px;
+    text-align: center;
+}
+
+.a-upload  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.a-upload:hover {
+    color: #fff;
+    background: #EF7756;
+    text-decoration: none
+}
+.bg-none{
+    background: none;
+    border: none;
+    width: 40%;
+    outline: none;
+}
+.deal-available,.deal-Redeemable,.deal-price,.deal-quantity,.deal-purchase{
+    overflow: hidden;
+}
+.deal-image{
+    border-top: 1px solid rgb(242, 242, 242);
+    border-bottom: 1px solid rgb(242, 242, 242);
+    width: 90%;
+    margin-bottom: 2;
+    margin-top: 25px;
+    padding-bottom: 25px;
+}
+.deal-Redeemable,.deal-price,.deal-quantity{
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgb(242, 242, 242);
+}
+.title-p{
+    margin: 0;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 15px;
+    font-weight: 600;}
+.edit-p{
+	margin:20px 0 10px;
+}
+.edit-tip{
+	margin: 0 !important;
+}
+.from,.to{
+    width: 40%;
+    float: left;
+}
+.from span,.to span{
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+.date{
+    height: 40px;
+    display: inline-block;
+    padding: 5px;
+    background: #F0F0F0;
+}
+.date i{
+    background: url('../images/date.png');
+    width: 30px;
+    height: 30px;
+    float: left;
+    background-position: 5px;background: url('../images/date.png');
+}
+.date input{
+    border: none;
+    height: 22px;
+    background: #F0F0F0;
+    outline: none;
+    line-height: 22px !important;
+    margin-top: 5px;
+}
+.time{
+    height: 40px;
+    display: inline-block;
+    padding: 5px;
+    background: #F0F0F0;
+}
+.time i{
+    background: url('../images/time.png');
+    width: 30px;
+    height: 30px;
+    float: left;
+    background-position: 0;
+}
+
+.time input{
+    border: none;
+    height: 22px;
+    background: #F0F0F0;
+    outline: none;
+    line-height: 22px !important;
+    margin-top: 5px;
+}
+.deal-price input,.deal-quantity input,.deal-purchase input{
+    margin: 3px !important;
+    margin-right: 15px !important;
+}
+.radio-price input{
+    margin-right: 0 !important;
+    background: #F2F2F2;
+    width: 124px;
+}
+.radio-left,.radio-right{
+    width: 40%;
+    float: left;
+}
+.location-all{
+    width: 40%;
+    float: left;
+    margin-top: 10px;
+}
+.location-all .location-check{
+    width: 50px;
+}
+.location-add{margin: -17px 0 0 -15px;}
+.save-deal{
+    float: right;
+    width: 161px !important;
+    height: 56px;
+    margin-top: 35px;
+    background: rgba(239, 119, 86, 1);
+    border: none;
+    color: #fff;
+    outline: none;
+}
+.save-deal:hover {
+    background: #F90;
+    text-decoration: none
+}
+
+.dealsList{
+	position: absolute;
+	left:5px;
+	top:110px;
+	width: 1079px;
+	line-height: 70px;
+	background-color: #f0f0f0;
+}
+.deal-list li{
+	border-bottom:solid 1px #ccc;
+}
+
+
+    table{border-collapse:collapse;border-spacing:0;}
+    body{background-color:#f0f0f0;}
+    ul li{list-style:none;background-color:#fff;}
+    .deal-list{width:1080px; position:relative;left:5px;top:110px;overflow:hidden;}
+    .list{width:1044px; padding:10px 15px;overflow:hidden;margin-top: 10px;}
+    .list-img{height:92px;width:230px;}
+    .list div{float:left;height:92px;}
+    .deal-div{margin-left:15px;}
+    .deal-div h3{margin-top:7px;margin-bottom:8px;font-weight:bold;}
+    .deal-div .txt{margin-top:0;margin-bottom:8px;}
+    .deal-div .button{margin-top:0;}   
+    .deal-div .button{color:#00cc00; padding:2px 6px; border:solid 1px #00cc00;border-radius:5px;}
+    .deal-div .buttonr{margin-top:0;}   
+    .deal-div .buttonr{color:#ff0000; padding:2px 6px; border:solid 1px #ff0000;border-radius:5px; text-align:center;}
+    .list .right{ float:right;}
+    .p{width:140px;text-align:center; border-left:solid 1px #e3e3e3;}
+    .p p{height:30px;line-height:30px;vertical-align:middle;}
+    .p .pur{margin-top:20px;margin-bottom:0;}
+    .font-bold{font-weight:bold;}
+    
+.buttonr{
+	color:#F44336;
+	padding:2px 6px;
+	border:solid 1px #F44336;
+	border-radius:5px;
+	text-align: center;
+	  
+}
+.baidu-map{
+    position: absolute;
+    top: 145px;
+    left: 600px; 
+    width: 350px;
+    height: 200px;
+    overflow: hidden;
+    background-color: rgb(242, 242, 242) !important;
+    outline: none;
+}
+/*change new vendor css*/
+.locationP{margin: 10px 0 0 23px !important;}
+.location-left{float: left;width: 558px;}
+.location-left span{display: block;margin-top: 2px;}
+.location-right span{display: block;}
+.mar-top{margin-top: -42px;}
+
+.vouchers{
+	padding:10px 0;
+	margin-top:105px;
+	margin-left:20px;
+	background:#fff;
+	width:1044px;
+    overflow: hidden;
+    min-height: 322px;
+    border-bottom:solid 1px #c1c1c1;
+}
+.deals_detail{
+	padding:10px 0;
+	margin-top:105px;
+	margin-left:20px;
+	width:1080px;
+    overflow: hidden;
+    min-height: 432px;
+}
+.deals_left{
+	margin-top:0px;
+	margin-left:10px;
+	background:#fff;
+	width:370px;
+    overflow: hidden;
+    min-height: 432px;
+    float:left;
+    border-bottom:solid 1px #c1c1c1;
+}
+
+.deals_right{
+	padding:10px 0;
+	margin-top:0px;
+	margin-left:10px;
+	background:#fff;
+	width:690px;
+    overflow: hidden;
+    min-height: 432px;
+    float:left;
+    border-bottom:solid 1px #c1c1c1;
+}
+
+.deals-name {
+	
+	height: 90px;
+	text-align: center;
+	overflow: hidden;
+	border-bottom:solid 1px #c1c1c1;
+}
+
+#deals-name {
+    position: absolute;
+    left: 425px;
+    top: 150px;
+    width: 241px;
+    height: 16px;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 20px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+#deals-price {
+    position: absolute;
+    left: 950px;
+    top: 130px;
+    height: 56px;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    line-height: 28px;
+}
+#deals-price-text {
+    position: absolute;
+    left: 950px;
+    top: 130px;
+    height: 56px;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    line-height: 28px;
+}
+
+#deals-description {
+    position: absolute;
+    left: 435px;
+    top: 235px;
+    width: 145px;
+    height: 20px;
+    font-family: 'Proxima Nova Semibold', 'Proxima Nova Regular', 'Proxima Nova';
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+    text-align: left;
+    line-height: 20px;
+    white-space: nowrap;
+}
+#description {
+    position: absolute;
+    left: 435px;
+    top: 255px;
+    width: 643px;
+    height: 16px;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+}
+#deals-term {
+    position: absolute;
+    left: 435px;
+    top: 340px;
+    width: 145px;
+    height: 20px;
+    font-family: 'Proxima Nova Semibold', 'Proxima Nova Regular', 'Proxima Nova';
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+    text-align: left;
+    line-height: 20px;
+    white-space: nowrap;
+}
+#term-cond {
+    position: absolute;
+    left: 435px;
+    top: 360px;
+    width: 643px;
+    height: 16px;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+}
+#deals-max {
+    position: absolute;
+    left: 435px;
+    top: 445px;
+    width: 145px;
+    height: 20px;
+    font-family: 'Proxima Nova Semibold', 'Proxima Nova Regular', 'Proxima Nova';
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+    text-align: left;
+    line-height: 20px;
+    white-space: nowrap;
+}
+#max-limit {
+    position: absolute;
+    left: 435px;
+    top: 465px;
+    width: 643px;
+    height: 16px;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+}
+.left{ float:left;}
+.deals_image{
+	width:376px;
+    height: 154px;
+}
+#u289 {
+    position: absolute;
+    left: 40px;
+    top: 360px;
+    width: 240px;
+    height: 40px;
+    font-family: 'Proxima Nova Bold', 'Proxima Nova Regular', 'Proxima Nova';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+    white-space: nowrap;
+}
+#u291 {
+    position: absolute;
+    left: 40px;
+    top: 415px;
+    width: 240px;
+    height: 40px;
+    font-family: 'Proxima Nova Bold', 'Proxima Nova Regular', 'Proxima Nova';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+    white-space: nowrap;
+}
+
+.deals-div {
+	width: 371px;
+	height: 80px padding:10px 15px;
+	font-family: 'Proxima Nova'; font-weight : 400; font-style : normal;
+	text-align : center; line-height : 28px;
+	overflow: hidden;
+	font-weight: 400;
+	font-style: normal;
+	text-align: center;
+	line-height: 28px;
+	border-bottom:solid 1px #c1c1c1;
+}
+.p-deals{width:124px;text-align:center; border-right:solid 1px #c1c1c1;}
+
+.u355 {
+    position: absolute;
+    left: 20px;
+    top: 120px;
+    width: 230px;
+    height: 20px;
+    font-family: 'Proxima Nova Semibold', 'Proxima Nova Regular', 'Proxima Nova';
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+    white-space: nowrap;
+}
+.u305 {
+    position: absolute;
+    left: 20px;
+    top: 220px;
+    width: 230px;
+    height: 20px;
+    font-family: 'Proxima Nova Semibold', 'Proxima Nova Regular', 'Proxima Nova';
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+    white-space: nowrap;
+}
+
+.label {
+    font-size: 14px;
+    text-align: left;
+}
+
+#u354 {
+    position: absolute;
+    left: 40px;
+    top: 155px;
+    width: 530px;
+    height: 40px;
+}
+
+.text_field {
+    color: #000000;
+    text-align: left;
+}
+.u357 {
+    position: absolute;
+    left: 828px;
+    top: 179px;
+    width: 160px;
+    height: 40px;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+.u354_input {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 530px;
+    height: 40px;
+    background-color: #f0f0f0;
+    font-family: 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    text-decoration: none;
+    color: #000000;
+    text-align: left;
+}
+
+.voucher_button{
+	position: absolute;
+    left: 540px;
+    top: 0px;
+    width: 160px;
+    height: 40px;
+    background-color: #fc7808;
+    font-family: 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    text-decoration: none;
+    color: #000000;
+    text-align: center;
+}
+
+#app-download {
+    position: absolute;
+    left: 40px;
+    top: 255px;
+    width: 237px;
+    height: 64px;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #1E1E1E;
+    text-align: left;
+    line-height: 20px;
+}
+#voucher-download {
+    position: absolute;
+    left: 40px;
+    top: 330px;
+    width: 237px;
+    height: 64px;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #1E1E1E;
+    text-align: left;
+    line-height: 20px;
+}
+#app-div {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 237px;
+    height: 64px;
+    background: inherit;
+    background-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(51, 51, 51, 1);
+    border-radius: 5px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #1E1E1E;
+    text-align: left;
+    line-height: 10px;
+}
+
+#app-text {
+    position: absolute;
+    left: 60px;
+    top: 5px;
+    width: 175px;
+    word-wrap: break-word;
+}
+.mar-top{margin-top: -42px;}
+
+
+.remove-btn{
+	position: absolute;
+    right: 20px;
+    top: 20px;
+    border: solid 1px #ccc;
+    padding: 3px 5px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.location-list{
+	width:884px; 
+	margin-left:160px;
+	overflow:hidden;
+}
+
+.location-list ul{
+	width:442px;
+}
+
+.location-list ul:last-child{
+	margin-bottom:50px;
+}
+
+.to-edit{
+	display:block;
+}
+.channel-location{
+	position:relative;
+}
+.channel-location ul{
+	height:60px;
+	padding-left:0;
+}
+.channel-location ul.local-add{
+	width:442px;
+	padding-left:-3px;
+}
+.channel-location ul li{
+	padding-left:0;
+}
+.channel-location button.to-edit{
+	position:absolute;
+	bottom:20px;left:0;
+}
+
+
+#voucher-imagediv {
+    position: absolute;
+    left: 60px;
+    top: 350px;
+    width: 26px;
+    height: 20px;
+}
+
+#app-imagediv {
+    position: absolute;
+    left: 50px;
+    top: 265px;
+    width: 34px;
+    height: 34px;
+}
+#app-image {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 45px;
+    height: 45px;
+}
+#voucher-image {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 30px;
+    height: 25px;
+}
+.u412 {
+    position: absolute;
+    left: 40px;
+    top: 160px;
+    width: 225px;
+    height: 90px;
+}
+
+.u410 {
+    position: absolute;
+    left: 220px;
+    top: 160px;
+    width: 167px;
+    height: 16px;
+    font-family: 'Proxima Nova Bold', 'Proxima Nova Regular', 'Proxima Nova';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+}
+
+#u414 {
+    position: absolute;
+    left: 220px;
+    top: 185px;
+    width: 658px;
+    height: 86px;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+}
+#use-description {
+    position: absolute;
+    left: 220px;
+    top: 185px;
+    width: 658px;
+    height: 86px;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+}
+
+.u416 {
+    position: absolute;
+    left: 950px;
+    top: 190px;
+    height: 40px;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    line-height: 20px;
+}
+
+.u408 {
+    position: absolute;
+    left: 40px;
+    top: 280px;
+    width: 330px;
+    height: 40px;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#u408_img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 330px;
+    height: 40px;
+}
+
+#u409 {
+    position: absolute;
+    left: 2px;
+    top: 13px;
+    width: 326px;
+    word-wrap: break-word;
+}
+.u424 {
+    position: absolute;
+    left: 400px;
+    top: 280px;
+    width: 172px;
+    height: 40px;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #999999;
+    text-align: center;
+}
+
+#u424_div {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 172px;
+    height: 40px;
+    background: inherit;
+    background-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(153, 153, 153, 1);
+    border-radius: 5px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #999999;
+}
+
+#u425 {
+    position: absolute;
+    left: 2px;
+    top: 13px;
+    width: 168px;
+    word-wrap: break-word;
+}
+
+#u479 {
+    position: absolute;
+    left: 20px;
+    top: 115px;
+    width: 20px;
+    height: 20px;
+}
+.u479 {
+    position: absolute;
+    left: 30px;
+    top: 115px;
+    width: 20px;
+    height: 20px;
+}
+
+.u479-ba {
+    position: absolute;
+    left: 40px;
+    top: 280px;
+    width: 172px;
+    height: 40px;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #999999;
+    text-align: center;
+}
+
+@media screen and (max-width: 1450px) {
+	body{min-height:600px;}
+	#rightPanel{position:absolute; height:90%;}
+}
+@media screen and (min-width: 1451px) {
+	#rightPanel{position:absolute; height:93%;}
+}
+
+#history-button {
+    position: absolute;
+    left: 60px;
+    top: 490px;
+    width: 147px;
+    height: 35px;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    color: #999999;
+}
+
+#u313_div {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 147px;
+    height: 35px;
+    background: inherit;
+    background-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(153, 153, 153, 1);
+    border-radius: 5px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    color: #999999;
+}
+
+#history-text {
+    position: absolute;
+    left: 2px;
+    top: 12px;
+    width: 143px;
+    word-wrap: break-word;
+}
+
+/*delete baidu anchorBL*/
+.anchorBL{ 
+display:none; 
+} 
+
+.vouchers-line{hight:50px; border-bottom:solid 1px #c1c1c1;}
+.vouchers-deline{left: 2px; top: 12px;hight:170px;}
+.black .pur{color:black;font-weight:bold;}
+.voucher-line{/*height:50px;*/ border-bottom:solid 1px #c1c1c1;}
+.voucher-deline{/*height:110px;*/ border-bottom:solid 1px #c1c1c1;}
+
+/*voucherlist.html*/
+.voucher-section{
+    margin-top: 200px;
+    background: rgba(240, 240, 240, 1);
+    overflow: hidden;
+    width: 1080px;
+    border: 1px solid #ccc;
+    margin-left: 20px;
+}
+.voucher-section ul{
+    padding: 0;
+    margin-bottom: 5px;
+}
+.tab{
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #ccc;
+    text-align: center;
+    border-bottom: 0;
+    float: left;
+    margin-top: 120px;
+    margin-left: 20px;
+}
+.select-voucher{
+    float: right;
+    width: 275px;
+    height: 30px;
+    margin: 15px 15px 0 0;
+    line-height: 30px;
+}
+.date-voucher{
+    height: 30px;
+    line-height: 30px;
+    margin: 15px 0 0 15px;
+}
+.tab-mar{
+    margin-left: 10px;
+}
+.Redemptions,.sales{
+    padding: 0 15px;
+    border-top: 1px solid #ccc;
+    margin-top: 15px;
+}
+.Redemptions .sales-title,.sales .sales-title{
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+}
+.Redemptions .sales-title li,.sales .sales-title li{
+    float: left;
+    background: rgba(240, 240, 240, 1);
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.sales-content{width: 100%;}
+.sales-content ul{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    padding-left: 10px;
+}
+.sales-content ul li{
+    float: left;
+    text-align: center;
+    height: 48px;
+    line-height: 48px;
+}
+.width-10{
+    width: 10%;
+}
+.width-15{
+    width: 15%;
+}
+.width-20{
+    width: 20%;
+}
+.width-25{
+    width: 25%;
+}
+.width-35{
+    width: 35%;
+}
+.width-40{
+    width: 40%;
+}
+.color-ccc{
+    color:#ccc;
+}
+.color-333{
+    color:#000;
+}
+.display-none{
+    display: none;
+}
+.display-block{
+    display: block;
+}
+
+.remove-btn{
+	position: absolute;
+    right: 20px;
+    top: 20px;
+    border: solid 1px #ccc;
+    padding: 3px 5px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.location-list{
+	width:884px; 
+	margin-left:160px;
+	overflow:hidden;
+}
+
+.location-list ul{
+	width:442px;
+	margin-top: 0px;
+}
+
+.location-list ul:last-child{
+	margin-bottom:50px;
+}
+
+.location-list1 ul{
+	width:442px;
+}
+.location-list1 ul:last-child{
+	margin-bottom:0px;
+}
+
+.to-edit{
+	display:block;
+}
+.channel-location{
+	position:relative;
+}
+.channel-location ul{
+	height:60px;
+	padding-left:0;
+}
+.channel-location ul.local-add{
+	width:442px;
+	padding-left:-3px;
+}
+.channel-location ul li{
+	padding-left:0;
+}
+.channel-location button.to-edit{
+	position:absolute;
+	bottom:20px;left:0;
+}
+#showJson{
+	position: absolute;
+	left:1111px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Manage Vendors</title>
+</head>
+<body>
+ 
+ <div id="vendors">
+      <img src="images/u164.png">
+      <span>{{ 'Vendors' | translate }}</span>
+      <p id="newVen" ng-click="toNew()">{{ 'NEWVENDOR' | translate }}</p>
+ </div>
+ 
+ <div >
+        <input id="search" placeholder="Search vendors by name" ng-model="channelNames">
+        <img id="query" ng-click="queryCompany()" src="images/u170.png"/>
+        <img id="line" src="images/u172.png"/>
+      </div>
+      
+      
+      
+      <div class="vendoeList">
+        <li ng-repeat="chan in channel" ng-click='showChannel(chan.channelId,chan.channelName)' class="show-shop">
+          <span>{{chan.channelName}}</span>
+          <span>{{chan.count}}  deals</span>
+          <span>{{ 'DETAILS' | translate }}</span>
+      </li>
+      </div>
+      
+</body>
+</html>

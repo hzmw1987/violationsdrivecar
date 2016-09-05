@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <div id="vendors">
+      <img src="images/u164.png">
+      <span> {{ 'CategoriesOverview' | translate }}</span>
+ </div>
+ 
+ <div class="channel1"> 
+      <div >
+        {{name}} 
+      </div>
+     <button ng-click="toEdit()"> {{ 'CHANGETITLE' | translate }}</button>
+ </div> 
+ 
+ <div id="vendoeList1">
+      <p>{{ 'Vendorsdeals' | translate }}</p>
+      <button ng-click="toNewDeal()"> {{ 'NEWDEAL' | translate }}</button>
+       <div   infinite-scroll='nextPage()' infinite-scroll-disabled='busy' infinite-scroll-distance='1'>
+      <li ng-repeat="bat in batchinfo"  class="show-deal" ng-click="toEditDeal(bat)">
+         <img src="{{bat.imageUrl}}">
+         <ul class="list-deal">
+           <li>{{bat.batchName}}</li>
+           <li>Voncher Description</li>
+           <li  ng-hide="{{bat.endTime < nowTime}}"> {{ 'REDEEMABLEFROM' | translate }} {{bat.startTime | date:'yyyy-MM-dd'}}</li>
+           <li class="buttonr" ng-show="{{bat.endTime < nowTime}}">EXPIRED</li>
+         </ul>
+         <div class="list-right">
+             <ul class="list-purchased">
+               <li>{{ 'Purchased' | translate }} </li>
+               <li class="weight-700 font-18">{{bat.purchaseCount}}/{{bat.batchAmount == 0? '∞':bat.batchAmount }}</li>
+             </ul>
+             <ul class="list-redeemed">
+               <li>{{ 'Redeemed' | translate }} </li>
+               <li class="weight-700 font-18">{{bat.userCount}}/{{bat.purchaseCount}}</li>
+             </ul>
+             <ul class="list-money">
+              <li ng-class="bat.originalPrice == NULL ? 'weight-700':'originalPrice'">{{bat.originalPrice == NULL ?'FREE':'￥'+bat.originalPrice}}</li>
+               <li ng-class="bat.purchasePrice == 0 ? 'weight-700' :'purchasePrice'">{{bat.purchasePrice == 0 ?'VOUCHER':'￥'+bat.purchasePrice}}</li>
+             </ul>
+         </div>
+    </li>
+    
+    <!-- <div ng-show='busy'><img width="600px" height="80px" src="images/load.gif"/></div> -->
+    </div>
+    </div>
+
+</body>
+</html>

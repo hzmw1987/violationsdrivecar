@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="vendors">
+      <img src="images/u164.png" ng-click="overView()">
+      <span>{{ 'EditVendors' | translate }}</span>
+ </div>
+<form name="myForm">
+ <div id="addVendors">
+   <div class="add-vendors">
+	    <span style="margin-bottom:5px;display: inline-block;">{{ 'Vendorname' | translate }} *</span></br>
+	    <input ng-model="channelName" required="required"/>
+	    <div class="float-right float-right1">
+	    <span class="span-right">{{ 'Vendorlogo' | translate }}</span> 
+	    <div class="file-box">
+	       <img src="{{imageUrl}}"/>
+	    	<input type="button" class="btn_set" name="btn" value="  {{ 'SELECTIMAGE' | translate }}" />
+	    	<div name="textfiled" id="textfield" class="txt"></div>
+	    	<input type="file" name="fileField" class="file" id="fileFiled" onchange="angular.element(this).scope().addFile()"/>
+	    </div>
+	    
+	    </div>
+   </div>
+   
+    <div class="location-pos" id="addMap">
+      <div class="location" ng-repeat="local in locationList track by $index">
+         <input ng-model="local.locationId" type="hidden"/>
+         <p class="locationP weight-700">{{ 'Location' | translate }}</p>
+         <div class="location-left">
+            <span>{{ 'companyname' | translate }} * </span>
+            <input id="companyName{{$index}}" ng-model='local.companyName' required="required"/> 
+            <span>{{ 'StreetaddressinEnglish' | translate }} * </span>
+            <input ng-model='local.englishAddress' required="required"/> 
+            <span>{{ 'StreetaddressinChinese' | translate }} *</span>
+            <input id="pos{{$index}}" ng-model="local.chineseAddress" required="required"/></br>
+            <span class="contact">{{ 'Contactphone' | translate }} *</span>
+            <input ng-model="local.telphone" required="required" type="text" pattern="(\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$"/></br>
+            <span>{{ 'City' | translate }} *</span>
+            <input id="citys{{$index}}" type="text" ng-model="local.cityName"  style="position: absolute;background: white;z-index: 100;width:80px;border:1px solid #aaa; border-right:0" readonly="true" />
+	       <select ng-model="local.city" ng-change="getCityName($index)">
+	          <option ng-repeat="area in areaList" value="{{area.id}}">{{area.name}}</option>
+	       </select>
+         </div>
+         <div class="location-right">
+         <span> {{ 'Geolocation' | translate }}    </span> <p class="remove-btn" ng-click="removeItem($index)">{{ 'REMOVE' | translate }}</p>
+         <div class="set-map" ng-click="map(this)" value="{{$index}}">    {{ 'SETLOCATIONONMAP' | translate }}</div>
+         <input id="resultLng{{$index}}" class="pos-xy" ng-model="local.longitude">
+         <input id="resultLat{{$index}}" class="pos-xy" ng-model="local.latitude">
+         <div contenteditable="true" id="container{{$index}}" class="baidu-map"  style="left:560px"></div>
+         </div>
+      </div>
+      <div id="container" class="baidu-map"></div>
+   </div>  
+     <div id="addLocation" ng-click="addlocation()">+ {{ 'ADDANOTHERLOCATION' | translate }}</div>
+   <div id="event" class="event">
+      <span  ng-click="overView()">{{ 'back' | translate }}</span> 
+      <button class="add-ventor"   ng-click="updateVentor(!myForm.$valid)">{{ 'save' | translate }}</button>
+   </div>
+ </div>
+ 
+</form>
+</body>
+</html>

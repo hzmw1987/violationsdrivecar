@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<!-- <pre id="showJson" style="border: none;background: none"> -->
+		<pre id="showJson">
+   
+</pre>
+		<span
+			style="position: absolute; top: 27px; font-size: 30px; left: 20px; width: 160px">我的优惠券</span>
+		<div style="position: absolute; top: -70px; left: 777px">
+			<input id="search" placeholder="请输入用户手机号码" ng-model="telphone">
+			<img id="query" ng-click="showDealsDetail()" src="images/u170.png" />
+		</div>
+		<div class="channel channel-location" ng-show="isShow">
+			<div ng-repeat="bat in coupon">
+				<img src="{{bat.imageUri}}"> 优惠劵：
+				<div>
+					<ul>
+						<li>{{bat.couponCode}}</li>
+					</ul>
+				</div>
+				<br><hr></br> 适用门店：
+				<div ng-repeat="local in bat.channelMsg.locations"
+					class="location-list1"
+					style="overflow: hidden; margin-left: 160px;">
+					<ul class="local-add">
+						<li>{{local.englishAddress}}</li>
+						<li>{{local.chinessAddress}}</li>
+					</ul>
+					<ul>
+						<li>Contact phone</li>
+						<li>{{local.telphone}}</li>
+					</ul>
+					<ul>
+						<p>可使用时间：</p>
+						<li>{{bat.redemptionFrom}}----{{bat.redemptionTo}}</li>
+					</ul>
+					<ul>
+						<li ng-class="bat.price == NULL ? 'weight-700':'originalPrice'">{{bat.price
+							== NULL ?'FREE':'￥'+bat.price}}</li>
+						<li ng-class="bat.dealPrice == 0 ? 'weight-700' :'purchasePrice'">{{bat.dealPrice
+							== 0 ?'VOUCHER':'￥'+bat.dealPrice}}</li>
+					</ul>
+				</div>
+				<hr>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

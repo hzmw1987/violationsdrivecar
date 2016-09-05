@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Redeem Voucher</title>
+</head>
+<body>
+	<div id="vendors">
+      <span>{{ 'redeemVoucher' | translate }}</span>
+ 	</div>
+ 	
+ 	<div class="vouchers" > 
+ 		<div class="u355">
+ 		<p>
+ 			<span>{{ 'redeemCode' | translate }}</span>
+ 		</p>
+ 			
+ 		</div>
+ 		<div id="u354" class="text_field">
+ 			<input class="u354_input" type="text" ng-model="voucherCode">
+ 			<input class="voucher_button" type="button" value="{{ 'check' | translate }}" ng-click="verifyVoucher()">
+ 		</div>
+ 		
+ 		<div class="u305">
+ 			<p>
+ 				<span>{{ 'alternatively' | translate }}</span>
+ 			</p>
+ 		</div>
+ 		<div id="app-imagediv">
+ 			<img id="app-image" alt="" src="images/u361.png">
+ 		</div>
+ 		<div id="app-download">
+ 			<div id="app-div"></div>
+ 			<div id="app-text" class="text" style="visibility: visible;">
+ 			 	<p>DOWNLOAD </p>
+ 			 	<p>VENDOR APP</p>
+ 			</div>
+ 		</div>
+ 		<div id="voucher-imagediv">
+ 			<img id="voucher-image" alt="" src="images/u363.png">
+ 		</div>
+ 		<div id="voucher-download">
+ 			<div id="app-div"></div>
+ 			<div id="app-text" class="text" style="visibility: visible;">
+ 			 	<p>DOWNLOAD VOUCHER</p>
+ 			 	<p>LIST AS .CSV FILE</p>
+ 			</div>
+ 		</div>
+ 	</div>
+</body>
+</html>

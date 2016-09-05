@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.test</groupId>
+		<artifactId>violationsdrivecar</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>violationsdrivecarMS</artifactId>
+	<packaging>war</packaging>
+	<name>violationsdrivecarMS Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>com.test</groupId>
+			<artifactId>violationsdrivecarCommon</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-tomcat</artifactId> 
+			</dependency> -->
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- <plugin> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-maven-plugin</artifactId> 
+				<configuration> <mainClass>com.magus.vouchersapi.Main</mainClass> <outputDirectory>${project.build.directory}/three_party_lib</outputDirectory> 
+				</configuration> </plugin> -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<!-- <source>7</source> <target>7</target> -->
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>7</source>
+					<target>7</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<useDefaultDelimiters>true</useDefaultDelimiters>
+				</configuration>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<finalName>violationsdrivecarMS</finalName>
+		
+	</build>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>public</id>
+			<name>Public Repositories</name>
+			<url>http://maven.funguide.com.cn/nexus/content/groups/public/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>spring-snapshots</id>
+			<url>http://repo.spring.io/snapshot</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>spring-milestones</id>
+			<url>http://repo.spring.io/milestone</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<!-- 打包构建 -->
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<build>
+				<filters>
+					<filter>src/main/resources/filters/dev.properties</filter>
+				</filters>
+				<resources>
+					<resource>
+						<directory>src/main/resources</directory>
+						<filtering>true</filtering>
+
+						<!-- optional -->
+						<includes>
+							<include>*.*</include>
+							<include>logback.xml</include>
+							<include>**/*.xml</include>
+						</includes>
+
+					</resource>
+				</resources>
+			</build>
+			<properties>
+				<log.logback.level>DEBUG</log.logback.level>
+				<log.logback.ref>STDOUT</log.logback.ref>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+				<property>
+					<name>env</name>
+					<value>dev</value>
+				</property>
+			</activation>
+		</profile>
+
+		<profile>
+			<id>qa</id>
+			<build>
+				<filters>
+					<filter>src/main/resources/filters/qa.properties</filter>
+				</filters>
+				<resources>
+					<resource>
+						<directory>src/main/resources</directory>
+						<filtering>true</filtering>
+
+						<!-- optional -->
+						<includes>
+							<include>*.*</include>
+							<include>logback.xml</include>
+							<include>*/*.*</include>
+						</includes>
+
+					</resource>
+				</resources>
+			</build>
+			<properties>
+				<log.logback.level>INFO</log.logback.level>
+				<log.logback.ref>FILE</log.logback.ref>
+			</properties>
+
+			<activation>
+
+				<property>
+					<name>env</name>
+					<value>qa</value>
+				</property>
+			</activation>
+		</profile>
+
+		<profile>
+			<id>prod</id>
+			<build>
+				<filters>
+					<filter>src/main/resources/filters/prod.properties</filter>
+				</filters>
+				<resources>
+					<resource>
+						<directory>src/main/resources</directory>
+						<filtering>true</filtering>
+
+						<!-- optional -->
+						<includes>
+							<include>*.*</include>
+							<include>logback.xml</include>
+							<include>**/*.xml</include>
+						</includes>
+
+					</resource>
+				</resources>
+			</build>
+			<properties>
+				<log.logback.level>INFO</log.logback.level>
+				<log.logback.ref>FILE</log.logback.ref>
+			</properties>
+
+			<activation>
+				<property>
+					<name>env</name>
+					<value>prod</value>
+				</property>
+			</activation>
+		</profile>
+	</profiles>
+</project>

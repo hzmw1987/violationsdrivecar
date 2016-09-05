@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="vendors">
+      <img src="images/u164.png">
+      <span>{{ 'editUser' | translate }}</span>
+ </div>
+<form name="myForm">
+ <div >
+   <div id="addUser">
+	    <span style="margin-bottom:5px;display: inline-block;">{{ 'username' | translate }} *</span></br>
+	    <input class="input_user" ng-model="userName" required="required" readonly="readonly"/></br>
+	    
+	    <span style="margin-bottom:5px;display: inline-block;">{{ 'fullName' | translate }} *</span></br>
+	    <input class="input_user" ng-model="fullName" required="required"/></br>
+	    
+	     <span style="margin-bottom:5px;display: inline-block;">{{ 'email' | translate }} *</span></br>
+	    <input class="input_user" ng-model="email" required="required"/></br>
+	    
+	    <span style="margin-bottom:5px;display: inline-block;">{{ 'password' | translate }} *</span></br>
+	    <input class="input_user" ng-model="password" required="required" type="password"/></br>
+	    
+	    <span style="margin-bottom:5px;display: inline-block;">{{ 'retypePassword' | translate }} *</span></br>
+	    <input class="input_user" ng-model="repassword" required="required" type="password" ng-blur="checkPassword()"/></br>
+	    
+	     <span style="margin-bottom:5px;display: inline-block;">{{ 'selectRole' | translate }} *</span></br>
+	    <div class="radio_bg">
+	     	<div class="radio_role">
+		        <input type="radio" ng-model="roleId" value="13" name="role" checked="{{roleId}}==13" ng-click="showDiv(false)"/>{{ 'manager' | translate }}
+		        <p>{{ 'managerInfo' | translate }}</p>
+		     </div>
+		     <div class="radio_role">
+		          <input type="radio" ng-model="roleId" value="14" name="role" checked="{{roleId}}==14" ng-click="showDiv(true)"/>{{ 'vendor' | translate }}
+		          <p>
+		             {{ 'vendorInfo' | translate }}
+		          </p>
+		     </div>
+	     </div>
+	     
+	     <div  id="showChannel" ng-show="visiable1">
+		     <span style="margin-bottom:5px;display: inline-block;">{{ 'vendor' | translate }} *</span></br>
+		     <input id="channelName1" type="text" ng-model="channelName"/>
+		     <select ng-model="channelId" id="showVendor" ng-change="getChannelName($index)">
+		         <option ng-repeat="chan in channel" value="{{chan.channelId}}" selected="{{channelId}} == {{chan.channelId}}">{{chan.channelName}}</option>
+		     </select>
+	     </div>
+	     
+	     </div>
+   
+ </div>
+ 
+ <div id="to_addUser"><p>{{ 'back' | translate }}</p> <button id="save_user" ng-click="updateUser(!myForm.$valid)">{{ 'save' | translate }}</button></div>
+</form>
+</body>
+</html>

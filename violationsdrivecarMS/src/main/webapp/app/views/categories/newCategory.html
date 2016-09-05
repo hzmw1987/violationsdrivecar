@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="vendors">
+      <img src="images/u164.png" ng-click="back()">
+      <span>{{ 'NewCategory' | translate }}</span>
+ </div>
+<form name="myForm">
+ <div id="addVendors" style="height: 150px">
+   <div class="add-vendors">
+	    <span style="margin-bottom:5px;display: inline-block;">{{ 'Categoryname' | translate }} *</span></br>
+	    <input ng-model="name" required="required"/>
+   </div>
+ </div>
+ 
+ <div id="to_adds"><p ng-click="back()" style="width: 60px">{{ 'back' | translate }}</p> <button id="saves" ng-disabled='!myForm.$valid' ng-click="addcate()">{{ 'save' | translate }}</button></div>
+</form>
+</body>
+</html>

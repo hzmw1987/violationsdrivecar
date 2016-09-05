@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="vendors">
+      <span>{{ 'redeemVoucher' | translate }}</span>
+ 	</div>
+ 	
+ 	<div class="channel">
+ 		<div class="voucher-line">
+ 			
+ 			<p class="">
+ 				
+ 				<span style="font-family:'Proxima Nova';font-weight:400;font-style:normal;">
+ 				<img id="u479" class="" src="images/u479.png">&nbsp {{ 'voucher' | translate }}</span>
+ 				<span style="font-family:'Proxima Nova Bold', 'Proxima Nova Regular', 'Proxima Nova';font-weight:700;">"{{couponCode}}"</span>
+ 				<span style="font-family:'Proxima Nova';font-weight:400;font-style:normal;">{{ 'successRedeemed' | translate }}</span>
+ 			</p>
+ 		</div>
+ 		<div class="voucher-deline" style="height: 130px">
+ 			<img alt="" class="u412" src="{{batchInfo.imageUrl}}">
+ 			<div class="u410">{{batchInfo.batchName}}</div>
+ 			<div id="use-description" style="font-family:'Proxima Nova';font-weight:400;font-style:normal;"></div>
+ 		
+ 		<div class="u416">
+ 			<p style="font-size:14px;">
+ 			<span style="font-family:'Proxima Nova';font-weight:400;font-style:normal;color:#999999;"><s>¥{{batchInfo.originalPrice/100}}</s></span>
+ 			</p>
+ 			<p style="font-size:18px;">
+ 			<span style="font-family:'Proxima Nova Bold', 'Proxima Nova Regular', 'Proxima Nova';font-weight:700;">¥{{batchInfo.purchasePrice/100}}</span>
+ 			</p>
+ 			
+ 		</div>
+ 		<!-- <div class="u416" ng-show="{{batchinfo.purchasePrice == 0 || batchinfo.purchasePrice == null || batchinfo.purchasePrice == undefined}}">
+ 			<p style="font-size:18px;">
+ 			<span style="font-family:'Proxima Nova Bold', 'Proxima Nova Regular', 'Proxima Nova';font-weight:700;">FREE</span>
+ 			</p>
+ 			<p style="font-size:18px;">
+ 			<span style="font-family:'Proxima Nova Bold', 'Proxima Nova Regular', 'Proxima Nova';font-weight:700;">VOUCHER</span>
+ 			</p>
+ 			
+ 		</div> -->
+ 		</div>
+ 		
+ 		<div class="u479-ba" style="cursor: pointer;" ng-click="backVouchers()">
+ 			<div id="u424_div" class tabindex="0" style="outline: none;"></div>
+ 			<div id="u425" class="text" style="visibility: visible; top: 12px; transform-origin: 84px 8px 0px;">
+ 				<p><span>{{ 'another' | translate }}</span></p>
+ 			</div>
+ 		</div>
+ 	</div>
+</body>
+</html>

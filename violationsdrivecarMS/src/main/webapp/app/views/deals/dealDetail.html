@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Manage Vendors</title>
+</head>
+<body>
+
+	<div id="vendors">
+		<img src="images/u164.png"> <span>{{ 'dealOverview' | translate }}</span>
+	</div>
+
+	<div class="deals_detail" style="overflow: hidden;">
+		<div class="deals_left">
+		 <img class="deals_image" src="{{batchinfo.imageUrl}}">
+				<div class="deals-div">
+					<div class="left p-deals" style="visibility: visible;">
+						<p style="font-size: 14px;">
+							<span
+								style="font-family: 'Proxima Nova'; font-weight: 400; font-style: normal;">
+								{{ 'unitsSold' | translate }}</span>
+						</p>
+						<p style="font-size: 18px;">
+							<span
+								style="font-family: 'Proxima Nova Bold', 'Proxima Nova Regular', 'Proxima Nova'; font-weight: 700;">
+								{{batchinfo.purchaseCount}}/{{batchinfo.batchAmount}} </span>
+						</p>
+					</div>
+					<div class="left p-deals" style="visibility: visible;">
+						<p style="font-size: 14px;">
+							<span
+								style="font-family: 'Proxima Nova'; font-weight: 400; font-style: normal;">{{ 'redeemed' | translate }}</span></span>
+						</p>
+						<p style="font-size: 18px;">
+							<span
+								style="font-family: 'Proxima Nova Bold', 'Proxima Nova Regular', 'Proxima Nova'; font-weight: 700;">
+								{{batchinfo.userCount}}/{{batchinfo.purchaseCount}} </span>
+						</p>
+					</div>
+					<div class="left" style="visibility: visible;">
+						<p style="font-size: 14px;">
+							<span
+								style="font-family: 'Proxima Nova'; font-weight: 400; font-style: normal;">{{ 'revenue' | translate }}</span>
+						</p>
+						<p style="font-size: 18px;">
+							<span
+								style="font-family: 'Proxima Nova Bold', 'Proxima Nova Regular', 'Proxima Nova'; font-weight: 700;">
+								¥{{batchinfo.purchasePrice*batchinfo.userCount/100}}</span>
+						</p>
+					</div>
+				</div>
+				<div id="u289">
+					<p>
+						<span
+							style="font-family: 'Proxima Nova Bold', 'Proxima Nova Regular', 'Proxima Nova'; font-weight: 700;">{{ 'available' | translate }}:</span>
+					</p>
+					<p>
+						<span style="font-family: 'Proxima Nova'; font-weight: 400;">{{batchinfo.payStartTime|date:'yyyy-MM-dd HH:mm'}} - {{batchinfo.payEndTime|date:'yyyy-MM-dd HH:mm'}}</span>
+					</p>
+				</div>
+				<div id="u291">
+					<p>
+						<span
+							style="font-family: 'Proxima Nova Bold', 'Proxima Nova Regular', 'Proxima Nova'; font-weight: 700;">{{ 'redeemable' | translate }}:</span>
+					</p>
+					<p>
+						<span style="font-family: 'Proxima Nova'; font-weight: 400;">{{batchinfo.startTime|date:'yyyy-MM-dd HH:mm'}} - {{batchinfo.endTime|date:'yyyy-MM-dd HH:mm'}}</span>
+					</p>
+				</div>
+				<div id="history-button" style="cursor: pointer;" ng-click="tohistory()">
+					<div id="u313_div" class tabindex="0"></div>
+					<div id="history-text" class="text" style="visibility: visible; top: 10px; transform-origin: 71.5px 7.5px 0px;">
+						<p><span>{{ 'history' | translate }}</span></p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="right deals_right">
+				<div class="deals-name">
+					<div id="deals-name">
+					<p><span>{{batchinfo.batchName}}</span></p>
+					</div>
+					<div id="deals-price">
+						<p style="font-size:14px;">
+							<span style="font-family:'Proxima Nova';font-weight:400;font-style:normal;color:#999999;"><s>¥{{batchinfo.originalPrice/100}}</s></span>
+						</p>
+						<p style="font-size:28px;">
+							<span style="font-family:'Proxima Nova Bold', 'Proxima Nova Regular', 'Proxima Nova';font-weight:700;">¥{{batchinfo.purchasePrice/100}}</span>
+						</p>
+					</div>
+					<!-- <div id="deals-price-text" ng-show="{{isShow}}">
+						<p style="font-size:28px;">
+							<span style="font-family:'Proxima Nova Bold', 'Proxima Nova Regular', 'Proxima Nova';font-weight:700;">FREE</span>						
+						</p>
+						<p style="font-size:28px;">
+							<span style="font-family:'Proxima Nova Bold', 'Proxima Nova Regular', 'Proxima Nova';font-weight:700;">VOUCHER</span>
+						</p>
+					</div> -->
+				</div>
+				<div id="deals-description">
+					<p>{{ 'dealDetail' | translate }}</p>
+				</div>
+				<div id="description">
+					<p></p>
+				</div>
+				<div id="deals-term">
+					<p>{{ 'conditions' | translate }}</p>
+				</div>
+				<div id="term-cond">
+					<p></p>
+				</div>
+				<div id="deals-max">
+					<p>{{ 'limit' | translate }}</p>
+				</div>
+				<div id="max-limit">
+					<p>Max. {{batchinfo.purchaseLimit}} purchases per user
+				</div>
+			</div>
+	</div>
+		
+</body>
+</html>

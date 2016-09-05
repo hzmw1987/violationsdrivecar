@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+<pre id="showJson" >
+   
+</pre>
+<span style="position: absolute;top:27px;font-size: 30px;left: 20px">可售列表</span>
+  <div style="margin-top: 88px">
+      <li ng-repeat="bat in batchinfo"  class="show-deal" ng-click='toDetail(bat.deal_id)'>
+         <img src="{{bat.imageUri}}">
+         <ul class="list-deal" style="width:680px;">
+           <li>{{bat.title}}</li>
+           <li>{{bat.redemptionFrom}}---{{bat.redemptionTo}}</li>
+         </ul>
+         
+         <ul class="list-money" style="margin-left: 20px">
+              <li ng-class="bat.price == NULL ? 'weight-700':'originalPrice'">{{bat.price == NULL ?'FREE':'￥'+bat.price}}</li>
+               <li ng-class="bat.dealPrice == 0 ? 'weight-700' :'purchasePrice'">{{bat.dealPrice == 0 ?'VOUCHER':'￥'+bat.dealPrice}}</li>
+             </ul>
+    </li>
+    </div>
+    </div>
+</body>
+</html>

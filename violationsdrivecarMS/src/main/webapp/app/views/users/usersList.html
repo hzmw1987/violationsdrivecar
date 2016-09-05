@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Manage Vendors</title>
+</head>
+<body>
+ 
+ <div id="vendors">
+      <img src="images/u164.png">
+      <span>{{ 'users' | translate }}</span>
+      <p id="newVen" ng-click="toNew()">{{ 'newUser' | translate }}</p>
+ </div>
+ 
+ <div >
+        <input id="search" placeholder="{{ 'searchUser' | translate }}" ng-model="userName">
+        <img id="query" ng-click="queryUsers()" src="images/u170.png"/>
+        <div id="search_role">
+          {{ 'displayRoles' | translate }} <select ng-change="queryUsers()" ng-model="roleId">
+           <option value="">{{ 'allRoles' | translate }}</option>
+           <option value="13">{{ 'vendor' | translate }}</option>
+           <option value="14">{{ 'manager' | translate }}</option>
+           <!-- <option ng-repeat="role in roleList" value="{{role.manageRoleId}}">{{role.roleName}}</option> -->
+        </select>
+        </div>
+         
+        <img id="line" src="images/u172.png"/>
+      </div>
+      
+      
+      <div  class="vendoeList" >
+        <li ng-repeat="user in userList"  class="show-shop">
+          <span ng-click='toEdit(user.manageUserId)'>{{user.userName}}</span>
+          <span>{{user.roleName}}</span>
+          <p id="channelName">{{user.channelName}}</p>
+      </li>
+      </div>
+      
+</body>
+</html>

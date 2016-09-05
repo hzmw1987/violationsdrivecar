@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Manage Vendors</title>
+</head>
+<body>
+ 
+ <div id="vendors">
+      <img src="images/u164.png">
+      <span>{{ 'dealList' | translate }}</span>
+ </div>
+ 
+
+
+<div class="deal-list">
+        <ul class="list-ul">
+         	<div infinite-scroll='nextPage()' infinite-scroll-disabled='busy' infinite-scroll-distance='1'>
+        
+             <li ng-repeat="deal in deals" ng-click='showDeal(deal.batchId)' class="list">
+                <div class="img"><img class="list-img" src="{{deal.imageUrl}}" alt=""></div>
+                <div class="deal-div">
+                    <h3>{{deal.batchName}}</h3>
+                    <p class="txt" >Voncher Description</p>
+                    <p class="button" ng-hide="{{deal.endTime < nowTime}}">{{ 'redeemableFrom' | translate }} {{deal.startTime | date:'yyyy-MM-dd'}}</p>
+                    <p class="buttonr" ng-show="{{deal.endTime < nowTime}}">{{ 'expired' | translate }}</p>
+                </div>
+                <div class="right p" ng-hide="{{deal.purchasePrice == 0 || deal.purchasePrice == null || deal.purchasePrice == undefined}}">
+                    <p class="pur"><s>¥{{deal.originalPrice/100}}</s></p>
+                    <p class="font-bold">¥{{deal.purchasePrice/100}}</p>
+                </div>
+                <div class="right black p" ng-show="{{deal.purchasePrice == 0 || deal.purchasePrice == null || deal.purchasePrice == undefined}}">
+                    <p class="pur">{{ 'free' | translate }}</p>
+                    <p class="font-bold">{{ 'vouchers' | translate }}</p>
+                </div> 
+                <div class="right p">
+                    <p class="pur">{{ 'redeemed' | translate }}</p>
+                    <p class="font-bold">{{deal.userCount}}/{{deal.purchaseCount}}</p>
+                </div> 
+                <div class="right p">
+                    <p class="pur">{{ 'purchased' | translate }}</p>
+                    <p class="font-bold">{{deal.purchaseCount}}/{{deal.batchAmount==0?'∞':deal.batchAmount}}</p>
+                </div>     
+             </li>
+             </div>
+         </ul>
+    </div>      
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+<pre id="showJson">
+   
+</pre>
+<span style="position: absolute;top:27px;font-size: 30px;left: 20px">详情</span>
+<div id="channel" class="channel channel-location" style="margin-left: 20px;min-height: 148px;"> 
+    <img src="{{batchinfo.imageUri}}" style="margin-left: 20px;margin-top: 10px"/>
+        <ul class="local-add" style="margin-top: 10px">
+            <li>{{batchinfo.title}}</li>
+            <li>有效期至：{{batchinfo.redemptionTo }}</li>
+            </br>
+            <li>已售：{{batchinfo.channelMsg.stats.sold}}张</li>
+        </ul>
+ </div> 
+ 
+    <div class="channel channel-location" style="position: absolute;top: 148px;margin-left: 20px">
+                 <li style="margin-left: 20px">电话号码：<input ng-model="telphone"/></li>
+                 <hr></hr>
+                 <li style="margin-left: 20px"> 购买数量：<input type="number" ng-model="count"/></li>
+                 <hr></hr>
+                 <li style="margin-left: 20px"> 失效时间：<input type="number" ng-model="time"/></li>
+                 <hr></hr>
+                 <li style="margin-left: 20px">支付金额：￥{{batchinfo.dealPrice*count}}</li>
+                 <hr></hr>
+    </div>
+    <div class="channel channel-location" style="position: absolute;top:339px;margin-left: 20px;min-height: 400px">
+       <p style="margin-left: 20px">使用门店</p>
+       <hr></hr>
+       <div ng-repeat="local in location">
+	        <ul style="width: 1044px;">
+	          <li style="margin-left: 20px">{{local.name}}</li>
+	          <li style="margin-left: 20px">{{local.chinessAddress}}</li>
+	          <li style="margin-left: 20px">{{local.telphone}}</li>
+	          <hr></hr>
+	       </ul>
+	       
+       </div>
+       
+      <div style="position: relative;top:20px;">
+       <span>优惠细则</span>
+       <div id="test" style="margin-left: 20px;margin-top: 10px;">
+       </div>
+       <hr></hr>
+    </div>
+    
+    <div><button class="save-deal" ng-click="toBuy()" style="margin-left:600px;margin-top: 10px;">购买</button></div>
+    </div>
+    
+    </div>
+</body>
+</html>

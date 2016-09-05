@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div id="vendors">
+	      <img src="images/u164.png" ng-click="gohistory()">
+	      <span>{{ 'EditDeal' | translate }}</span>
+	</div>
+	<form name="myForm">
+	<section class="deal">
+		<p class="title-p edit-p">{{channelList.channelName}}*</p>
+		<p class="edit-tip">{{ 'alerts' | translate }}</p>
+        <div ng-repeat="x in location track by $index" class="location-all">
+            <div class="location-check">
+                <input type="checkbox" ng-model="locationId" ng-checked="x.status == 1" value="{{x.locationId}}" id="checkbox{{$index + 1}}">          
+            </div>
+            <ul class="location-add">
+                <li class="weight-700">{{ 'Location' | translate }} #{{$index + 1}}</li>
+                <li>{{x.englishAddress}}</li>
+                <li>{{x.chineseAddress}}</li>
+        </div>
+	<div class="deal-title">
+		<p class="title-p">{{ 'dealtitle' | translate }}*</p>
+		<input type="text" class="bg-gray" ng-model="bat.batchName" required="required">
+	</div>
+	<div class="deal-detail">
+		<p class="title-p">{{ 'Detaileddescription' | translate }}*</p>
+        <trix-editor id="editor1" angular-trix trix-initialize="trixInitialize1(e, editor);" ng-model="description" class="trix-content trix-width bg-gray" ng-blur="blur1()"></trix-editor>
+	</div>
+	<div class="deal-term">
+		<p class="title-p">{{ 'Termsandconditions' | translate }}*</p>
+        <trix-editor id="editor2" angular-trix trix-initialize="trixInitialize2(e, editor);" ng-model="condtion" class="trix-content trix-width bg-gray" ng-blur="blur2()"></trix-editor>
+	</div>
+	<div style="position: relative;">
+	  <input type="text" ng-model="name" id="names" readonly="readonly"/>
+	<select id="categories" class="bg-gray mar-30"  ng-model="categorie" ng-options="x.name for x in categories" ng-init="categorie=''" ng-change="getName()">
+    </select>
+	</div>
+	
+    <div class="deal-image">
+        <p class="title-p">{{ 'Voucherimage' | translate }}*</p>
+        <img  src='{{imageUrl}}' class="batch_img">
+        <a href="javascript:;" class="a-upload">
+            <input type="file" multiple name="uploadFile"  accept="png,gif,jpg" id="uploadFile" onchange="angular.element(this).scope().addFile()">{{ 'SELECTIMSGE' | translate }}
+        </a>
+        <input type="text" class="bg-none" >
+    </div>
+    <div class="deal-available">
+        <p class="title-p">{{ 'Available' | translate }}*</p>
+        <p>{{ 'buyTime' | translate }}</p>
+        <div class="from">
+            <span>{{ 'From' | translate }}</span>
+            <div class="date">
+               <i></i>
+               <input type="date" ng-model="payStartTime" required="required"> 
+            </div>
+            <div class="time">
+               <i></i>
+               <input type="time" id="payStartTimeMin" ng-model="payStartTimeMin"> 
+            </div>
+        </div>
+        <div class="to">
+            <span>{{ 'To' | translate }}</span>
+            <div class="date">
+               <i></i>
+               <input type="date" ng-model="payEndTime" required="required"> 
+            </div>
+            <div class="time">
+               <i></i>
+               <input type="time" id="payEndTimeMin" ng-model="payEndTimeMin"> 
+            </div>
+        </div>
+    </div>
+    <div class="deal-Redeemable">
+        <p class="title-p">{{ 'Redeemable' | translate }}*</p>
+        <p>{{ 'useTime' | translate }}</p>
+        <div class="from">
+            <span>{{ 'From' | translate }}</span>
+            <div class="date">
+               <i></i>
+               <input type="date" ng-model="startTime" required="required"> 
+            </div>
+            <div class="time">
+               <i></i>
+               <input type="time" ng-model="startTimeMin" id="startTimeMin"> 
+            </div>
+        </div>
+        <div class="to">
+            <span>{{ 'To' | translate }}</span>
+            <div class="date">
+               <i></i>
+               <input type="date" ng-model="endTime" required="required"> 
+            </div>
+            <div class="time">
+               <i></i>
+               <input type="time" ng-model="endTimeMin" id="endTimeMin"> 
+            </div>
+        </div>
+    </div>
+    <div class="deal-price">
+        <p class="title-p">{{ 'Price' | translate }}*</p>
+        <p>{{ 'money' | translate }}</p>
+          <div class="radio-left">
+             <input id="radio1" type="radio" value="" name="radio1" ng-click="showSth('radio1')"/>{{ 'PaidVoucher' | translate }}
+             <div ng-show="radio1" class="radio-price">
+               <input type="text" placeholder="Regular price" ng-model="bat.originalPrice">
+               <input type="text" placeholder="Deal price" ng-model="bat.purchasePrice">
+             </div>
+          </div>
+          <div class="radio-right">
+              <input type="radio" name="radio1" value="0" ng-click="hideSth('radio1')" ng-model="bat.purchasePrice" ng-checked="{{bat.purchasePrice}} == 0"/>{{ 'FreeVoucher' | translate }}
+          </div>  
+    </div>
+    <div class="deal-quantity">
+        <p class="title-p">{{ 'Quantity' | translate }}*</p>
+        <p>{{ 'toatlCount' | translate }}</p>
+        <div class="radio-left">
+           <input id="radio2" type="radio" name="radio2" value=""  ng-click="showSth('radio2')"/>{{ 'Limitednumber' | translate }} 
+           <div ng-show="radio2" class="radio-price">
+             <input type="text" ng-model="bat.batchAmount">
+           </div>
+        </div>
+        <div class="radio-right">
+            <input type="radio" name="radio2" value="0" ng-click="hideSth('radio2')"  ng-model="bat.batchAmount" ng-model="{{bat.batchAmount}} == 0"/>{{ 'Unlimitednumber' | translate }}
+        </div>
+    </div>
+    <div class="deal-purchase">
+        <p class="title-p">{{ 'Purchaselimitation' | translate }}*</p>
+        <p>{{ 'buyCount' | translate }}</p>
+        <div class="radio-left">
+           <input id="radio3" type="radio" name="radio3" value=""  ng-click="showSth('radio3')"/>{{ 'Limitednumber' | translate }}
+           <div ng-show="radio3" class="radio-price">
+             <input type="text" ng-model="bat.purchaseLimit">
+           </div>
+        </div>
+        <div class="radio-right">
+            <input type="radio" name="radio3" value="0" ng-click="hideSth('radio3')" ng-model="bat.purchaseLimit" ng-checked="{{bat.purchaseLimit}}==0"/>{{ 'Unlimitednumber' | translate }}
+        </div>
+    </div>
+
+	</section>
+    <button id="saved" class="save-deal" ng-click="save(!myForm.$valid)">{{ 'save' | translate }}</button>
+    <div id="test" style="display:none"></div>
+    <div id="test1" style="display:none"></div>
+    </form>
+</body>
+</html>

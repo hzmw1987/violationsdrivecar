@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+ 
+ <div id="vendors">
+      <img src="images/u164.png">
+      <span>{{ 'ManagerCategories' | translate }}</span>
+      <p id="newVen" ng-click="toNew()">{{ 'NEWCATEGORY' | translate }}</p>
+ </div>
+ 
+      
+      <div class="cateList">
+        <li ng-repeat="cate in categories" ng-click='showChannel(cate.id,cate.name)' class="show-shop">
+          <span>{{cate.name}}</span>
+          <span>{{cate.count}}  deals</span>
+          <span>{{ 'DETAILS' | translate }}</span>
+      </li>
+      </div>
+      
+</body>
+</html>

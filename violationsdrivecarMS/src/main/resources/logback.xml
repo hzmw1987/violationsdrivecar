@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property name="LOG_HOME" value="/srv/share/logs/violationsdrivecarMS" />
+	<property name="LOG_LEVEL" value="${log.logback.level}"></property>
+	<property name="LOG_REF" value="${log.logback.ref}"></property>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%d{yy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{50}.%M[%L] - %m%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/vouchersAPI.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${LOG_HOME}/vouchersAPI-%d{yyyy-MM-dd}.gz
+			</FileNamePattern>
+		</rollingPolicy>
+		
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%d{yy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{50}.%M[%L] - %m%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		
+	</appender>
+	 <!-- 控制台输出 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"> 
+       <encoder>   
+         <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+         <pattern>%d{yy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{50}.%M[%L] - %m%n</pattern>   
+         <charset>GBK</charset> 
+      </encoder> 
+    </appender> 
+
+	<logger name="org.springframework.cloud.aws.messaging.listener" level = "OFF"></logger>
+	<logger name="org.hibernate.type.descriptor.sql.BasicBinder"
+		level="TRACE" />
+	<logger name="org.hibernate.type.descriptor.sql.BasicExtractor"
+		level="DEBUG" />
+	<logger name="org.hibernate.SQL" level="DEBUG" />
+	<logger name="org.hibernate.engine.QueryParameters" level="DEBUG" />
+	<logger name="org.hibernate.engine.query.HQLQueryPlan" level="DEBUG" />
+	<!-- 本地类日志级别 -->
+	<logger name="com.funguide" level="${LOG_LEVEL}" />
+
+	<!-- 日志输出级别 -->
+	<root level="INFO">
+		<appender-ref ref="${LOG_REF}" />
+	</root>
+</configuration>
